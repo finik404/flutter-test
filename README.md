@@ -1,4 +1,4 @@
 # FLUTTER TEST 🛠
 
-## The test project includes 🛠:
+## The test project includes:
 - Custom painting (Canvas)
