@@ -1,0 +1,110 @@
+name: tproject
+description: "Template for project"
+version: 1.0.0+1
+publish_to: 'none'
+environment:
+  sdk: ^3.5.2
+
+
+# --------------- PACKAGES --------------- #
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Http
+  dio: ^5.8.0+1
+
+  # State management
+  get: ^4.7.2
+
+  # Local storage
+  get_storage: ^2.1.1
+
+  # Svg
+  flutter_svg: ^2.1.0
+
+  # FontAwesome
+  font_awesome_flutter: ^10.8.0
+
+  # Formatting data
+  intl: ^0.19.0
+
+  # Permissions
+  permission_handler: ^12.0.0+1
+
+  # Web links
+  url_launcher: ^6.3.1
+
+  # Loading effect
+  shimmer: ^3.0.0
+
+  # Dynamic height elements in grid
+  flutter_staggered_grid_view: ^0.7.0
+
+  # Images caching
+  cached_network_image: ^3.4.1
+
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+
+  # Parse html
+  flutter_widget_from_html_core: ^0.16.0
+
+  # Share content
+  share_plus: ^11.0.0
+
+  # App info
+  package_info_plus: ^8.3.0
+
+  # Device info
+  device_info_plus: ^11.4.0
+
+  # Mask for input
+  easy_mask: ^2.0.1
+
+  # Pick image
+  image_picker: ^1.1.2
+
+  # Network connection
+  connectivity_plus: ^6.1.4
+
+  # Auto size text
+  auto_size_text: ^3.0.0
+
+
+# --------------- DEV PACKAGES --------------- #
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
+
+
+# --------------- SETTINGS --------------- #
+
+# Flutter
+flutter:
+  generate: true
+  uses-material-design: true
+
+
+  # --------------- ASSETS --------------- #
+
+  assets:
+    - assets/
+    - assets/img/
+    - assets/icons/
+
+  # --------------- FONTS --------------- #
+
+  fonts:
+    # Base font
+    - family: Circe
+      fonts:
+        - asset: assets/fonts/Circe-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Circe-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Circe-Bold.ttf
+          weight: 700

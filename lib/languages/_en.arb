@@ -1,0 +1,30 @@
+{
+  "@": "Main ==============================================================",
+
+  "error": "Error",
+
+  "@": "Errors ==============================================================",
+
+  "errors_required": "This field cannot be empty",
+  "errors_email": "Invalid email address",
+  "errors_min": "The field must be at least {length} characters",
+  "errors_max": "The field cannot exceed {length} characters",
+  "errors_password_confirm": "Passwords do not match",
+  "errors_password_required": "Enter the password",
+  "errors_password_min": "The password must contain a minimum of {length} characters",
+  "errors_password_max": "The password must not exceed {length} characters",
+  "errors_password_digit": "The password must contain at least one digit",
+  "errors_password_letter": "The password must contain at least one lowercase letter",
+  "errors_password_upper_letter": "The password must contain at least one uppercase letter",
+  "errors_password_symbol": "The password must contain at least one special character",
+  "errors_email_unique": "This email is already in use",
+  "errors_auth": "Invalid email or password",
+  "errors_image_size": "File size must not exceed {size} MB",
+  "errors_image_type": "Invalid image format. Acceptable formats: PNG, JPEG, JPG",
+  "errors_network": "No internet connection",
+  "errors_network_text": "Please check your internet connection and try again",
+  "errors_code": "Enter the recovery code",
+  "errors_code_length": "The code must be 4-digit",
+  "errors_auth_code": "Invalid recovery code",
+  "errors_phone": "Invalid phone number format"
+}
