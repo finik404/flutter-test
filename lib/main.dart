@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:tproject/app.dart';
 import 'package:tproject/util/constants/colors.dart';
+import 'package:tproject/util/constants/private.dart';
 import 'package:tproject/util/helpers/device.dart';
 import 'package:tproject/util/helpers/network/binding.dart';
 
@@ -22,6 +24,8 @@ void main() async {
       systemNavigationBarIconBrightness: Brightness.dark,
     ),
   );
+
+  Gemini.init(apiKey: TPrivates.geminiKey);
 
   // Local storage
   await GetStorage.init();

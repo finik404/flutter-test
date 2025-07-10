@@ -9,12 +9,11 @@ class UIClickItem extends StatelessWidget {
   const UIClickItem({
     super.key,
     required this.label,
-    required this.icon,
     required this.screen,
     this.iconRight = TIcons.right,
   });
 
-  final String label, icon;
+  final String label;
   final Widget screen;
   final String iconRight;
 
@@ -24,21 +23,15 @@ class UIClickItem extends StatelessWidget {
       radius: 12,
       onTap: () => to(screen),
       child: Ink(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 17.5),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: TColors.white),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 13),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: TColors.gray.withValues(alpha: 0.1)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                UIIcon(icon, color: TColors.primary, size: 12),
-                const SizedBox(width: 10),
-                UIText(label, size: 12),
-              ],
-            ),
+            UIText(label, size: 16),
 
             // Arrow
-            UIIcon(iconRight, size: 12, color: TColors.gray),
+            UIIcon(iconRight, size: 16, color: TColors.gray),
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -47,6 +48,7 @@ class TExternal {
 
   static Future<bool> getPermission(Permission permission, {Widget? permissionPopup}) async {
     PermissionStatus status = await permission.request();
+    print('status ${status}');
 
     if (status.isGranted) {
       return true;
@@ -57,7 +59,7 @@ class TExternal {
   }
 
   static Future<XFile?> pickImageFromGallery({int maxSize = 20, Widget? permissionPopup}) async {
-    XFile? file = await pickFile(type: ImageSource.gallery, permission: Permission.camera, maxSize: maxSize, permissionPopup: permissionPopup);
+    XFile? file = await pickFile(type: ImageSource.gallery, permission: Permission.mediaLibrary, maxSize: maxSize, permissionPopup: permissionPopup);
     return file;
   }
 
@@ -69,7 +71,8 @@ class TExternal {
 
 // Pick file
 Future<XFile?> pickFile({required ImageSource type, required Permission permission, required int maxSize, Widget? permissionPopup}) async {
-  bool hasPermission = await TExternal.getPermission(permission, permissionPopup: permissionPopup);
+  bool hasPermission = kDebugMode ?? await TExternal.getPermission(permission, permissionPopup: permissionPopup);
+  print('hasPermission ${hasPermission}');
 
   if (hasPermission) {
     // Picker

@@ -9,4 +9,7 @@ class TPrivates {
 
   // Error Tracking
   static const String bugTrackerDsn = '';
+
+  // Error Tracking
+  static const String geminiKey = 'AIzaSyD55uqp6LoczTh7WBsfUd8ex0VdV9609C4';
 }

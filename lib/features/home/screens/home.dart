@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:tproject/common/exports.dart';
 import 'package:tproject/common/layouts/main/main.dart';
 import 'package:tproject/features/canvas/screens/canvas.dart';
+import 'package:tproject/features/gemini/screens/gemini.dart';
 import 'package:tproject/features/home/controllers/home.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,16 +11,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(HomeController());
+    final c = Get.put(HomeController());
 
     return MainLayout(
       label: 'Test tech:',
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          UITextLink('Canvas', onTap: () => to(const CanvasScreen())),
-        ],
+      child: UIList(
+        length: c.items.length,
+        child: (index) => UIClickItem(label: c.items[index].label, screen: c.items[index].value),
       ),
     );
   }

@@ -27,11 +27,16 @@ class MainLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget scrollContent = SingleChildScrollView(
-      child: Container(
-        padding: hasArrow ? const EdgeInsets.only(top: 18, bottom: 30) : const EdgeInsets.only(bottom: 30),
-        child: Padding(padding: padding ?? TStyles.pd, child: child),
-      ),
+    Widget scrollContent = CustomScrollView(
+      physics: const ClampingScrollPhysics(),
+      slivers: [
+        Header(label, hasArrow: hasArrow),
+        Container(
+          child: SliverToBoxAdapter(
+            child: Padding(padding: padding ?? EdgeInsets.symmetric(vertical: 16, horizontal: 32), child: child),
+          ),
+        ),
+      ],
     );
 
     return BaseLayout(
@@ -41,10 +46,12 @@ class MainLayout extends StatelessWidget {
         children: [
           // Scrollable content
           Expanded(
-            child: NestedScrollView(
-              headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) => [Header(label, hasArrow: hasArrow)],
-              body: refresh != null ? UIRefresh(refresh: refresh!, child: scrollContent) : scrollContent,
-            ),
+            child: refresh != null
+                ? UIRefresh(
+                    refresh: refresh!,
+                    child: scrollContent,
+                  )
+                : scrollContent,
           ),
 
           // Bottom
