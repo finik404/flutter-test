@@ -71,8 +71,7 @@ class TExternal {
 
 // Pick file
 Future<XFile?> pickFile({required ImageSource type, required Permission permission, required int maxSize, Widget? permissionPopup}) async {
-  bool hasPermission = kDebugMode ?? await TExternal.getPermission(permission, permissionPopup: permissionPopup);
-  print('hasPermission ${hasPermission}');
+  bool hasPermission = kDebugMode == false ? await TExternal.getPermission(permission, permissionPopup: permissionPopup) : kDebugMode;
 
   if (hasPermission) {
     // Picker

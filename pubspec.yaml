@@ -75,6 +75,7 @@ dependencies:
   flutter_gemini: ^3.0.0
   flutter_chat_core: ^2.6.2
   flutter_chat_ui: ^2.6.2
+  flyer_chat_image_message: ^2.1.12
 
 
 # --------------- DEV PACKAGES --------------- #
