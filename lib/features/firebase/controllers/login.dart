@@ -26,6 +26,7 @@ class FirebaseLoginController extends GetxController {
       if (user.user != null) {
         Navigator.pop(Get.context!);
         FirebaseHomeController.instance.getUser();
+        FirebaseHomeController.instance.getPosts();
       }
     } catch (e) {
       print('Ошибка: $e');

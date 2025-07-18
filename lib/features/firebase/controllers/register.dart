@@ -30,6 +30,7 @@ class FirebaseRegisterController extends GetxController {
 
         Navigator.pop(Get.context!);
         FirebaseHomeController.instance.getUser();
+        FirebaseHomeController.instance.posts.clear();
       }
     } catch (e) {
       print('Ошибка: $e');
